@@ -1,14 +1,14 @@
 const swaggerAutogen = require("swagger-autogen")();
-
+require("dotenv").config();
 const doc = {
   info: {
     version: "1.0.0",
     title: "Sample Customer",
     description: "Documentation generated",
   },
-  host: "api.dev.smile-interview-be.qasimali.link",
+  host: process.env.APP_URL,
   basePath: "/api",
-  schemes: ["https"],
+  schemes: ["http", "https"],
   consumes: ["application/json"],
   produces: ["application/json"],
   tags: [

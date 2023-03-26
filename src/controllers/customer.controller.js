@@ -134,7 +134,11 @@ const updateCustomer = async (req, res) => {
       message: messages.customer.updateSuccess,
     });
   } catch (err) {
-    return res.errorResponse(err);
+    console.log("err", err);
+    return res.errorResponse(err, {
+      statusCode: 400,
+      message: "Email duplicate error",
+    });
   }
 };
 

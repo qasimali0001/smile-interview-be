@@ -67,7 +67,9 @@ const updateCustomer = async (customerId, customer) => {
 
     return customer;
   } catch (error) {
-    throw new Error(error.message);
+    throw new Error(
+      error.name == "ER_DUP_ENTRY" ? "Duplicate entry for email" : error.message
+    );
   }
 };
 

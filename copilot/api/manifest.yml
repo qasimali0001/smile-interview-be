@@ -57,3 +57,4 @@ environments:
       DB_USERNAME: "master"
       DB_PASSWORD: "a)*cPN!cWrLfUdn7"
       DB_NAME: "interview_db"
+      APP_URL: "api.dev.smile-interview-be.qasimali.link"
