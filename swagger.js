@@ -6,7 +6,7 @@ const doc = {
     title: "Sample Customer",
     description: "Documentation generated",
   },
-  host: "localhost:8000",
+  host: "smile-publi-4w6ngycewodk-1190691278.ap-south-1.elb.amazonaws.com",
   basePath: "/api",
   schemes: ["http", "https"],
   consumes: ["application/json"],
