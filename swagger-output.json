@@ -1,0 +1,254 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "Sample Customer",
+    "description": "Documentation generated"
+  },
+  "host": "localhost:8000",
+  "basePath": "/api",
+  "tags": [
+    {
+      "name": "Customer",
+      "description": "Endpoints"
+    }
+  ],
+  "schemes": [
+    "http",
+    "https"
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/customer/": {
+      "get": {
+        "tags": [
+          "Customer"
+        ],
+        "description": "Endpoint to get all customer.",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Customer successfully response.",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "message": {
+                  "type": "string",
+                  "example": "Customer list found."
+                },
+                "data": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/definitions/Customer"
+                  }
+                }
+              },
+              "xml": {
+                "name": "main"
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Customer"
+        ],
+        "description": "Endpoint to create a customer.",
+        "parameters": [
+          {
+            "name": "customer",
+            "in": "body",
+            "description": "Adding new customer.",
+            "schema": {
+              "$ref": "#/definitions/Customer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Customer successfully response.",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "message": {
+                  "type": "string",
+                  "example": "Customer successfully created."
+                },
+                "data": {
+                  "$ref": "#/definitions/Customer"
+                }
+              },
+              "xml": {
+                "name": "main"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/customer/{id}": {
+      "get": {
+        "tags": [
+          "Customer"
+        ],
+        "description": "Endpoint to get customer.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description": "Customer Id"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Customer successfully response.",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "message": {
+                  "type": "string",
+                  "example": "Customer found."
+                },
+                "data": {
+                  "$ref": "#/definitions/Customer"
+                }
+              },
+              "xml": {
+                "name": "main"
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Customer"
+        ],
+        "description": "Endpoint to delete customer.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description": "Customer Id"
+          },
+          {
+            "name": "customer",
+            "in": "body",
+            "description": "Adding new customer.",
+            "schema": {
+              "$ref": "#/definitions/Customer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Customer successfully response.",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "message": {
+                  "type": "string",
+                  "example": "Customer deleted successfully."
+                },
+                "data": {
+                  "$ref": "#/definitions/Customer"
+                }
+              },
+              "xml": {
+                "name": "main"
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Customer"
+        ],
+        "description": "Endpoint to delete customer.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description": "Customer Id"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Customer successfully response.",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "message": {
+                  "type": "string",
+                  "example": "Customer deleted successfully."
+                },
+                "data": {
+                  "$ref": "#/definitions/Customer"
+                }
+              },
+              "xml": {
+                "name": "main"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "Customer": {
+      "type": "object",
+      "properties": {
+        "firstName": {
+          "type": "string",
+          "example": "Jhon"
+        },
+        "lastName": {
+          "type": "string",
+          "example": "Doe"
+        },
+        "email": {
+          "type": "string",
+          "example": "test@testing.com"
+        },
+        "gender": {
+          "type": "string",
+          "example": "Male"
+        },
+        "addresses": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "street": {
+                "type": "string",
+                "example": "Example"
+              },
+              "city": {
+                "type": "string",
+                "example": "Example"
+              },
+              "country": {
+                "type": "string",
+                "example": "Example"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
