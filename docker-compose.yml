@@ -1,0 +1,16 @@
+version: "3.8"
+services:
+  api:
+    build: .
+    command: ["yarn", "start"]
+    restart: always
+    hostname: api
+    volumes:
+      - ./:/var/www/smile-be
+      - /var/www/smile-be/node_modules
+    env_file:
+      - .env
+    ports:
+      - "8000:8000"
+
+

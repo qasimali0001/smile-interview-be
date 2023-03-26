@@ -23,6 +23,9 @@ app.use(cors());
 app.use(express.urlencoded({ extended: false }));
 app.use("/api", routes);
 app.use("/docs", swaggerUi.serve, swaggerUi.setup(swaggerFile));
+app.get("/healthcheck", (req, res) => {
+  return res.status(200).send("OK");
+});
 
 app.use(errors());
 
