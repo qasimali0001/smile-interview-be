@@ -8,7 +8,7 @@ const doc = {
   },
   host: "api.dev.smile-interview-be.qasimali.link",
   basePath: "/api",
-  schemes: ["http", "https"],
+  schemes: ["https"],
   consumes: ["application/json"],
   produces: ["application/json"],
   tags: [
